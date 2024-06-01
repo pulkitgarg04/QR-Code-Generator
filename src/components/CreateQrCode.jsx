@@ -1,10 +1,9 @@
-import './App.css'
 import { useState } from 'react'
 import { saveAs } from 'file-saver'
 
-function App() {
+function CreateQrCode() {
 
-  const init = 'https://api.qrserver.com/v1/create-qr-code/?size=500&margin=null&color=000000&bgcolor=ffffff&format=png&data=pulkitgarg04';
+  const init = 'https://api.qrserver.com/v1/create-qr-code/?size=500&margin=null&color=000000&bgcolor=ffffff&format=png&data=https://github.com/pulkitgarg04';
   const [qrData, setQrData] = useState('')
   const [qrCode, setQrCode] = useState(init)
   const handleTextChange = (e) => {
@@ -35,6 +34,10 @@ function App() {
 
   return (
     <>
+    <form>
+
+    </form>
+    <div className='flex justify-center items-center'>
       <div>
         <img src={qrCode} alt="" height={400} />
         <br /><br />
@@ -47,8 +50,9 @@ function App() {
       </div>
       <br /><br />
       <button onClick={handleSubmit}>Generator QR Code</button>
+    </div>
     </>
   )
 }
 
-export default App
+export default CreateQrCode
